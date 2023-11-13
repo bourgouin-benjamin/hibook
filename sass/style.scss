@@ -1,0 +1,27 @@
+@import "helpers/variables";
+@import "helpers/fontface";
+@import "helpers/reset";
+@import "helpers/clear";
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100vw;
+    overflow-x: hidden;
+    background: $c1;
+}
+
+@import "components/font";
+
+// MENU
+@import "components/menu";
+
+// MAIN
+@import "components/main";
+
+// FOOTER
+@import "components/footer";
+
+@import "helpers/keyframes";

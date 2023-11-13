@@ -1,0 +1,91 @@
+h1,
+h2 {
+    font-family: $artifex;
+    font-size: $XL;
+    color: $c5;
+
+    @media (max-width:$tablette) {
+        font-size: 35px;
+    }
+}
+
+.menu {
+    a {
+        font-family: $artifex;
+        font-size: $M;
+        color: $c5;
+        text-decoration: none;
+
+        @media (max-width:$tablette) {
+            font-size: $S;
+        }
+    }
+}
+
+main {
+    .presentation {
+        a {
+            font-family: $leo;
+            font-size: $L;
+            color: $c1;
+            letter-spacing: 4px;
+            text-decoration: none;
+        }
+    }
+
+    p {
+        font-family: $nunito;
+        font-size: $M;
+        color: $c5;
+    }
+}
+
+footer {
+    article:first-child {
+        div {
+            p {
+                font-family: $nunito;
+                font-size: $M;
+                color: $c1;
+
+                @media (max-width:$tablette) {
+                    font-size: $XS;
+                }
+
+                @media (max-width:$mobile) {
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    article:last-child {
+        p {
+            font-family: $nunito;
+            font-size: $S;
+            color: $c1;
+
+            @media (max-width:$tablette) {
+                font-size: $XS;
+            }
+        }
+
+        div {
+            p {
+                font-family: $nunito;
+                font-size: $XS;
+                color: $c1;
+                opacity: 0.4;
+                font-weight: $w2;
+
+                @media (max-width:$mobile) {
+                    text-align: center;
+                }
+            }
+
+            p:first-child {
+                font-weight: $w4;
+            }
+        }
+    }
+}

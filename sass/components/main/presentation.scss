@@ -1,0 +1,117 @@
+.presentation {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../img/background/fond1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: $m6 0 0 0;
+    box-sizing: border-box;
+
+    .maxwidth1 {
+        max-width: 1000px;
+        margin: auto;
+        box-sizing: border-box;
+
+        .flex {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            .phone {
+                width: 43%;
+
+                img {
+                    width: 100%;
+                }
+
+                @media (max-width:$mobile) {
+                    display: none;
+                }
+            }
+
+            .textPres {
+                width: 50%;
+                padding: $m7 0 0 0;
+                box-sizing: border-box;
+
+                p {
+                    margin: $m1 0 $m3 0;
+                }
+
+                a {
+                    background: transparent;
+                    border-radius: 5px;
+                    padding: 15px 25px;
+                    box-sizing: border-box;
+                    background: $c3;
+                    position: relative;
+                    transition: all 0.3s ease-in;
+                    z-index: 1;
+
+                    &::before {
+                        content: 'Découvrir';
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 50%;
+                        right: 50%;
+                        background: $c4;
+                        transition: all 0.3s ease-in;
+                        z-index: 0;
+                        border-radius: 5px;
+                        color: transparent;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    &:hover {
+
+                        &::before {
+                            left: 0;
+                            right: 0;
+                            opacity: 1;
+                            color: $c5;
+                        }
+                    }
+                }
+
+                @media (max-width:$tablette) {
+                    padding: $m5 0 0 0;
+                    box-sizing: border-box;
+                }
+
+                @media (max-width:$mobile) {
+                    width: 100%;
+
+                    &::before {
+                        content: '';
+                        width: 100%;
+                        height: 150px;
+                        background-image: url('../img/logo/logoHeaderResponsive.png');
+                        background-size: contain;
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        margin: 0 auto $m5 auto;
+                        display: block;
+                    }
+                }
+            }
+
+            @media (max-width:$mobile) {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width:$tablette) {
+            padding: 0 $m2;
+            box-sizing: border-box;
+        }
+    }
+
+    @media (max-width:$mobile) {
+        padding: $m1 0;
+    }
+}

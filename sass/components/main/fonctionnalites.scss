@@ -1,0 +1,149 @@
+.fonctionnalites {
+    width: 100%;
+    height: 100vh;
+    padding: $m8 0 $m6 0;
+    box-sizing: border-box;
+    background-image: url('../img/background/fond2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+
+    .maxwidth2 {
+        max-width: 1000px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        article:first-child {
+            width: 60%;
+            padding: $m6 0 0 0;
+            box-sizing: border-box;
+
+            .pictos {
+                margin: 0 0 $m4 0;
+                display: flex;
+
+                div {
+                    width: 70px;
+                    margin: 0 $m5 0 0;
+                    position: relative;
+                    transition: all 0.5s ease-in;
+
+                    &::after {
+                        content: '';
+                        width: 3px;
+                        height: 10px;
+                        position: absolute;
+                        left: calc(50% - 1.5px);
+                        bottom: 0;
+                        background: $c3;
+                        border-radius: 50px;
+                        opacity: 0;
+                        transition: all 0.5s ease-in;
+                    }
+
+                    img {
+                        width: 100%;
+                        cursor: pointer;
+                    }
+
+                    &.pictoActif {
+                        transform: translateY(-50px) scale(1.5);
+                        transition: all 0.5s ease-in;
+
+                        &::after {
+                            bottom: -80%;
+                            height: 50px;
+                            opacity: 1;
+                            transition: all 0.5s ease-in;
+                        }
+                    }
+
+                    @media (max-width:$tablette) {
+                        margin: 0 $m3 0 0;
+                    }
+                }
+
+                div:last-child {
+                    margin: 0;
+                }
+
+                @media (max-width:$tablette) {
+                    margin: 0 0 $m2 0;
+                }
+            }
+
+            .caroussel {
+                width: 100%;
+                overflow-x: hidden;
+
+                .container {
+                    width: 300%;
+                    transition: all 0.5s ease-in;
+
+                    .box {
+                        width: calc(100% / 3);
+                        float: left;
+
+                        h2 {
+                            margin: 0 0 $m1 0;
+                        }
+                    }
+                }
+            }
+
+            @media (max-width:$mobile) {
+                width: 100%;
+                padding: 0;
+            }
+        }
+
+        .phone {
+            width: 30%;
+            position: relative;
+
+            .mockup {
+                max-width: 100%;
+                max-height: 65vh;
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 2;
+            }
+
+            .screen {
+                max-width: 100%;
+                max-height: 70vh;
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 3;
+                opacity: 0;
+                transition: all 0.5s ease;
+            }
+
+            .actif {
+                opacity: 1;
+            }
+
+            @media (max-width:$mobile) {
+                display: none;
+            }
+        }
+
+        @media (max-width:$tablette) {
+            padding: 0 $m2;
+            box-sizing: border-box;
+        }
+
+        @media (max-width:$mobile) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    @media (max-width:$mobile) {
+        padding: $m7 0;
+        height: auto;
+    }
+}

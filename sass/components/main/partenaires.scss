@@ -1,0 +1,70 @@
+.partenaires {
+    width: 100%;
+    height: auto;
+    padding: $m3 $m7;
+    box-sizing: border-box;
+    background: $c2;
+
+    .maxwidth3 {
+        max-width: 1000px;
+        margin: auto;
+
+        h2 {
+            text-align: center;
+            margin: 0 0 $m3 0;
+        }
+
+        .containerPartenaires {
+            width: 100%;
+            height: 70px;
+            overflow-x: hidden;
+            position: relative;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                width: 160px;
+                height: 100%;
+                background: linear-gradient(to right, $c2 0%, rgba(254, 237, 209, 0) 100%);
+                z-index: 2;
+            }
+
+            &::before {
+                top: 0;
+                left: 0;
+            }
+
+            &:after {
+                top: 0;
+                right: 0;
+                transform: rotateZ(180deg);
+            }
+
+            .sliderPartenaires {
+                width: calc(190px * 10 * 10);
+                height: auto;
+                display: flex;
+                align-items: center;
+                animation: scrollAuto 30s infinite linear;
+
+                .slidePack {
+                    width: calc(190px * 10);
+                    height: auto;
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        height: 70px;
+                        margin: 0 $m2 0 0;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width:$tablette) {
+        padding: $m3 $m2;
+        box-sizing: border-box;
+    }
+}

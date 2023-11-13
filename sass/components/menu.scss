@@ -1,0 +1,123 @@
+.menuBurger {
+    width: 75px;
+    height: 75px;
+    background: $c2;
+    box-shadow: 0 0 20px 0.25px rgba(0, 0, 0, 0.3);
+    border-radius: 100%;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    z-index: 50;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        display: none;
+        width: 50%;
+
+        &.visible {
+            display: block;
+        }
+    }
+
+    @media (max-width:$mobile) {
+        display: flex;
+    }
+}
+
+header {
+    width: 100%;
+    background: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    transition: all 0.3s ease;
+
+    .maxwidthMenu {
+        max-width: 1000px;
+        height: 112px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        img {
+            width: 190px;
+
+            @media (max-width:$tablette) {
+                width: 130px;
+            }
+        }
+
+        nav {
+            ul {
+                list-style: none;
+
+                li {
+                    display: inline-block;
+                    margin: 0 0 0 $m2;
+
+                    a {
+                        padding: 0 0 10px 0;
+                        border-bottom: 2px solid transparent;
+
+                        &:hover {
+                            border-color: $c5;
+                        }
+                    }
+
+                    @media (max-width:$tablette) {
+                        margin: 0 0 0 $m1;
+                    }
+
+                    @media (max-width:$mobile) {
+                        margin: $m1 0;
+                    }
+                }
+
+                li:first-child {
+                    margin: 0;
+
+                    @media (max-width:$mobile) {
+                        margin: $m1 0;
+                    }
+                }
+
+                @media (max-width:$mobile) {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+
+        @media (max-width:$tablette) {
+            padding: 0 $m2;
+            box-sizing: border-box;
+        }
+
+        @media (max-width:$mobile) {
+            width: auto;
+            height: 100%;
+            background: $c2;
+            padding: $m7 0;
+            box-sizing: border-box;
+            flex-direction: column;
+        }
+    }
+
+    &.onScroll {
+        background: $c2;
+        box-shadow: -2px 2px 7px 0.2px rgba(0, 0, 0, 0.07);
+    }
+
+    @media (max-width:$mobile) {
+        left: 100%;
+        width: 40%;
+        height: 100vh;
+        box-shadow: -2px 2px 7px 0.2px rgba(0, 0, 0, 0.07);
+    }
+}
